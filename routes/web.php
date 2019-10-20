@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('home');
+
+Route::resource('collection/{name}', 'CollectionController', [
+    'parameters' => ['{name}' => 'collection_name']
+]);
