@@ -31,7 +31,7 @@
                     <div class=" dropdown-header noti-title">
                         <h6 class="text-overflow m-0">Welcome!</h6>
                     </div>
-                    @include('partial.nav-items')
+                    @include('partials.nav-items')
                 </div>
             </li>
         </ul>

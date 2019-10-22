@@ -9,80 +9,83 @@ use App\Models\CollectionItem;
 class CollectionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the collection.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($collectionName)
+    public function index($collection)
     {
-        $collection = Collection::called($collectionName);
+        $collection = Collection::called($collection);
 
-        return view('collection.index')
+        return view('collections.index')
             ->with('collection', $collection);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new collection item.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($collection)
     {
-        //
+        $collection = Collection::called($collection);
+
+        return view('collections.create')
+            ->with('collection', $collection);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created collection item in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $collection)
     {
         //
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified collection item.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($collection, $id)
     {
         //
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified collection item.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($collection, $id)
     {
         //
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified collection item in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $collection, $id)
     {
         //
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified collection item from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($collection, $id)
     {
         //
     }
