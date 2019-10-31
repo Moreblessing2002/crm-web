@@ -25,11 +25,11 @@
 </head>
 </head>
 <body>
-    @include('partial.sidenav')
+    @include('partials.sidenav')
 
     <!-- Main content -->
     <div class="main-content">
-        @include('partial.top-navbar')
+        @include('partials.top-navbar')
         @yield('content')
     </div>
     

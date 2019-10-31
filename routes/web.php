@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('home');
 
-Route::resource('collection/{name}', 'CollectionController', [
+Route::resource('/collection/{name}', 'CollectionController', [
+    'names' => 'collection.item',
     'parameters' => ['{name}' => 'collection_name']
 ]);
+
+Route::resource('builder/collections', 'CollectionBuilder');
